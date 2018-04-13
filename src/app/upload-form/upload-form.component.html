@@ -1,0 +1,26 @@
+
+<div class="box">
+  <form class="form-inline" #dataForm="ngForm" (ngSubmit)="onSubmit(dataForm)">
+      <div class="form-group">
+          <label for="name">Movie Name</label> &nbsp;
+          <input type="text" class="form-control" id="name" name="naam" #naam="ngModel" [(ngModel)]="movService.currList.naam">
+          &nbsp;
+        </div>
+
+        <div class="form-group">
+            <label for="desc">Movie Descrp</label> &nbsp;
+            <input type="text" class="form-control" id="desc" name="desc" #desc="ngModel" [(ngModel)]="movService.currList.desc">
+            &nbsp;
+          </div>
+
+  <label>
+    <input type="file" class="btn btn-default" (change)="detectFiles($event)">
+  </label>
+  <!-- <button class="btn btn-primary"
+    [disabled]="!selectedFiles"
+    (click)="uploadSingle()">
+    Upload Single
+  </button> -->
+  <button type="submit" class="btn btn-default">Submit</button>
+</form>
+</div>
